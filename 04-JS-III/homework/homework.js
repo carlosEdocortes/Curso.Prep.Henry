@@ -66,24 +66,47 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for (var i =0; i < array.length; i++) {
+   if (array[i]===elemento) {
+    return true;
+   }
+   
+  }
+  return false;
 }
 
 function agregarNumeros(numeros) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  var suma =0;
+  for (var i = 0; i < numeros.length; i++) {
+    suma = (numeros[i])+suma;
+  }return suma;
 }
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+    var suma =0;
+  for (var i = 0; i < resultadosTest.length; i++) {
+    suma = (resultadosTest[i])+suma;
+  }return suma/resultadosTest.length;
 }
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  var numeroMayor =0;
+
+  for (var i =0; i< numeros.length;i++){
+    if (numeros[i] > numeroMayor) {
+      numeroMayor= numeros[i];
+    }
+  }return numeroMayor;
+
 }
 
 function multiplicarArgumentos() {
@@ -91,7 +114,16 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0
   // Si se pasa un argumento, simplemente devuélvelo
   // Tu código:
+  var producto =1;
+    if (arguments.length < 1) {return 0;}
+    if (arguments.length ==1) return arguments[0];
+    if (arguments.length >1) {
+      for(var i = 0; i<arguments.length;i++){
+        producto=producto*arguments[i];
+      }return producto;
+    }
 }
+multiplicarArgumentos(1,2,3,4,5)
 
 // No modificar nada debajo de esta línea
 // --------------------------------
